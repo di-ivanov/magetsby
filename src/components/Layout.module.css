@@ -1,0 +1,103 @@
+.wrapper {
+    position: relative;
+    margin: -45vh auto 0;
+    max-width: 1280px;
+    padding: 1rem;
+    background: white;
+}
+
+.item {
+    flex: 0 0 31%;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.productImage {
+    float: left;
+    width: 100%;
+}
+
+.productImage:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 4rem inset;
+}
+
+.paralaxContainer {
+    background: url("../assets/header.jpg");
+    border: 0;
+    height: 65vh;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    max-height: 1000px;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+}
+
+.navWrapper {
+    position: fixed;
+    background: transparent;
+    width: 100%;
+    z-index: 1000;
+    transition: background ease-in 0.3s;
+}
+
+.navContainer {
+    background: transparent;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    box-shadow: none;
+
+}
+
+.navLogo {
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.7) 2px 2px;
+    transition: color ease-in 0.3s;
+}
+
+.navIcon svg {
+    color: white;
+    filter:drop-shadow( 1px 1px 0 rgba(0, 0, 0, .7));
+    margin-left: 1rem;
+    transition: color ease-in 0.3s;
+
+}
+
+.paralaxContent {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 7vh;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.7) 2px 2px;
+}
+
+.stickyNav {
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+
+.stickyNav .navLogo {
+    color: #333;
+    text-shadow: none;
+}
+
+.stickyNav .navIcon svg {
+    color: #333;
+    filter: none;
+}
