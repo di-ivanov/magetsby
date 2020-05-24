@@ -6,8 +6,12 @@
     padding: 0;
 }
 
-.item {
-    flex: 0 0 1;
-    list-style: none;
+.cell {
+    flex: 0 0 calc(200%/3 - 1rem/2);
+    margin-bottom: 1rem;
+}
+
+.cellSmall {
+    flex: 0 0 calc(100%/3 - 1rem/2);
     margin-bottom: 1rem;
 }

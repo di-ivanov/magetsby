@@ -53,21 +53,11 @@ const Index = ({ data }) => {
     return (
         <div>
             <Layout>
-                <h3>Categories:</h3>
-                <ul>
-                    {categories.map(category => (
-                        <li
-                            key={category.id}
-                            style={{ clear: "both", display: "block" }}
-                        >
-                            <Link to={`/category/${category["url_key"]}/`}>
-                                {category.name}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
                 <div className={styles.container}>
-                    <Link to="/category/" className={styles.cell}><Image fluid={data.accesories.childImageSharp.fluid}/></Link>
+                    <Link to="/category/venia-accessories/" className={styles.cellSmall}><Image fluid={data.accesories.childImageSharp.fluid}/></Link>
+                    <Link to="/category/venia-dresses/" className={styles.cell}><Image fluid={data.dresses.childImageSharp.fluid}/></Link>
+                    <Link to="/category/shop-the-look/" className={styles.cell}><Image fluid={data.look.childImageSharp.fluid}/></Link>
+                    <Link to="/category/venia-bottoms/" className={styles.cellSmall}><Image fluid={data.bottoms.childImageSharp.fluid}/></Link>
                 </div>
             </Layout>
         </div>
