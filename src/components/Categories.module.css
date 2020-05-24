@@ -38,9 +38,28 @@
 }
 
 .categoryNavCell {
-    flex: 0 0 33%;
-    margin: 1rem 0;
-} 
+    flex: 1 0;
+    margin: 0.5rem 0;
+}
+
+
+.categoryNavCellMid {
+    flex: 4 0;
+    margin: 0.3rem 0;
+    text-align: center;
+}
+
+.productName {
+    margin-bottom: 0;
+}
+
+.productPrice {
+    font-weight: 700;
+}
+
+.productPrice sup {
+    font-size: 0.6rem;
+}
 
 @media (max-width: 1024px) {
     .item {

@@ -30,7 +30,6 @@
 }
 
 .paralaxContainer {
-    background: url("../assets/header.jpg");
     border: 0;
     height: 65vh;
     margin: 0;
@@ -48,7 +47,7 @@
     position: fixed;
     background: transparent;
     width: 100%;
-    z-index: 1000;
+    z-index: 10;
     transition: background ease-in 0.3s;
 }
 
@@ -56,23 +55,49 @@
     background: transparent;
     width: 100%;
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0.5rem auto 0;
     box-shadow: none;
 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    padding: 0.5rem 1rem;
+}
+
+.navLogoContainer {
+    flex: 1 0 10%;
 }
 
 .navLogo {
-    color: white;
-    text-shadow: rgba(0, 0, 0, 0.7) 2px 2px;
+    fill: white;
+    filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.7));
     transition: color ease-in 0.3s;
+    width: 34px;
+    height: 24px;
+}
+
+.navCategoriesContainer {
+    flex: 1 1 50%;
+    text-align: center;
+}
+
+.navCategoriesContainer a{
+    margin: 0 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    color: white;
+}
+
+.navIconsContainer {
+    flex: 1 0 10%;
+    text-align: right;
 }
 
 .navIcon svg {
     color: white;
-    filter:drop-shadow( 1px 1px 0 rgba(0, 0, 0, .7));
+    filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.7));
     margin-left: 1rem;
     transition: color ease-in 0.3s;
-
 }
 
 .paralaxContent {
@@ -85,6 +110,8 @@
     top: 7vh;
     color: white;
     text-shadow: rgba(0, 0, 0, 0.7) 2px 2px;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 .stickyNav {
@@ -93,11 +120,51 @@
 }
 
 .stickyNav .navLogo {
-    color: #333;
-    text-shadow: none;
+    fill: #444;
+    filter: none;
 }
 
 .stickyNav .navIcon svg {
-    color: #333;
+    color: #444;
     filter: none;
+}
+
+.stickyNav .navCategoriesContainer a {
+    color: #106ba3;
+}
+
+.mobileOnly {
+    display: none;
+}
+
+.mobileDrawerContainer {
+    flex: 1 0 10%;
+    text-align: left;
+}
+
+.mobileDrawer {
+    color: white;
+    cursor: pointer;
+}
+
+.stickyNav .mobileDrawer {
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .desktopOnly {
+        display: none;
+    }
+
+    .mobileOnly {
+        display: block;
+    }
+
+    .navLogoContainer {
+        text-align: center;
+    }
+
+    .paralaxContent h2 {
+        font-size: 1rem;
+    }
 }

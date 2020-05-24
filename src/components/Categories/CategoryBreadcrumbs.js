@@ -1,13 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-    Button,
-    Breadcrumbs,
-    Breadcrumb,
-    Icon,
-    UL,
-    Classes,
-} from "@blueprintjs/core"
+import { Classes } from "@blueprintjs/core"
 
 export default function CategoryBreadcrumbs({ url, name, breadcrumbs }) {
     let breadcrumbsData = []
@@ -28,7 +21,7 @@ export default function CategoryBreadcrumbs({ url, name, breadcrumbs }) {
     return (
         <ul className={Classes.BREADCRUMBS}>
             {breadcrumbsData.map(breadcrumb => (
-                <li key={breadcrumb.id}>
+                <li key={breadcrumb.href}>
                     <Link to={breadcrumb.href} className={Classes.BREADCRUMB}>
                         {/* {breadcrumb.icon && <Icon icon={breadcrumb.icon} />} */}
                         {breadcrumb.text}

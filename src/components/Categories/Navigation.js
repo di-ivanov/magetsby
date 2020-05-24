@@ -4,12 +4,12 @@ import { Tag } from "@blueprintjs/core"
 
 export default function Navigation({ url, children }) {
     return (
-        <div style={{ textAlign: `center` }}>
+        <div>
             {children.map(child => (
                 <Link
                     key={child.id}
                     to={`/category/${url}/${child.url_key}/`}
-                    style={{ margin: `0 1rem` }}
+                    style={{ margin: `0.2rem 1rem`, display: `inline-block` }}
                 >
                     <Tag minimal={true} large={true} interactive={true}>
                         {child.name}

@@ -24,7 +24,52 @@
 }
 
 .categoryLinks {
-    /* font-size: 1rem; */
     padding: 1rem 1rem 0 0;
     display: inline-block;
+}
+
+.productPrice {
+    font-size: 1.1rem;
+    font-weight: 700;
+
+}
+
+.productPrice sup {
+    font-size: 0.6rem;
+}
+
+.moreImages {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .cell {
+        flex: 0 0 100%;
+    }
+
+    .galleryCell .container {
+        margin: -1rem -1rem 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: start;
+        width: auto;
+    }
+    .galleryCell {
+        position: relative;
+    }
+
+    .imageCell, .imageCell:first-child {
+        flex: 1 0 90%;
+    }
+
+    .content {
+        padding: 0 1rem;
+    }
+
+    .moreImages {
+        display: block;
+        position: absolute;
+        bottom: 2rem;
+        right: 1rem;
+    }
 }

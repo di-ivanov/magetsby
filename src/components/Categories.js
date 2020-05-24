@@ -5,6 +5,7 @@ import Image from "gatsby-image"
 import styles from "./Categories.module.css"
 import Navigation from "./Categories/Navigation"
 import CategoryBreadcrumbs from "./Categories/CategoryBreadcrumbs"
+import { Helmet } from "react-helmet"
 
 export const query = graphql`
     query($id: String!) {
@@ -64,6 +65,10 @@ const Category = ({ data }) => {
     const productList = data.magentoProducts.categoryList[0].products.items
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>MaGetsby | {category.name}</title>
+            </Helmet>
             <Layout>
                 <div className={styles.categoryNav}>
                     <div className={styles.categoryNavCell}>
@@ -73,12 +78,16 @@ const Category = ({ data }) => {
                             breadcrumbs={category.breadcrumbs}
                         />
                     </div>
-                    { category.children.length > 0 && (<div className={styles.categoryNavCell}>
-                        <Navigation
-                            url={category.url_key}
-                            children={category.children}
-                        />
-                    </div>)}
+                    {category.children.length > 0 && (
+                        <div className={styles.categoryNavCellMid}>
+                            <Navigation
+                                url={category.url_key}
+                                children={category.children}
+                            />
+                        </div>
+                    )}
+                    <div className={styles.categoryNavCell}>
+                    </div>
                 </div>
                 <ul className={styles.items}>
                     {productList.map(product => (
@@ -92,17 +101,15 @@ const Category = ({ data }) => {
                                     alt={product.title}
                                     className={styles.productImage}
                                 />
-                                <h3>{product.name}</h3>
-                                <strong>
+                                <h3 className={styles.productName}>{product.name}</h3>
+                                <span className={styles.productPrice}>
                                     {
                                         product.price_range.maximum_price
                                             .final_price.value
                                     }
-                                </strong>{" "}
-                                {
-                                    product.price_range.maximum_price
-                                        .final_price.currency
-                                }
+                                    <sup>.00</sup>
+                                </span>
+                                €
                             </Link>
                         </li>
                     ))}
