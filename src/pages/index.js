@@ -54,10 +54,28 @@ const Index = ({ data }) => {
         <div>
             <Layout>
                 <div className={styles.container}>
-                    <Link to="/category/venia-accessories/" className={styles.cellSmall}><Image fluid={data.accesories.childImageSharp.fluid}/></Link>
-                    <Link to="/category/venia-dresses/" className={styles.cell}><Image fluid={data.dresses.childImageSharp.fluid}/></Link>
-                    <Link to="/category/shop-the-look/" className={styles.cell}><Image fluid={data.look.childImageSharp.fluid}/></Link>
-                    <Link to="/category/venia-bottoms/" className={styles.cellSmall}><Image fluid={data.bottoms.childImageSharp.fluid}/></Link>
+                    <Link
+                        to="/category/venia-accessories/"
+                        className={`${styles.cell} ${styles.cellSmall}`}
+                    >
+                        <Image fluid={data.accesories.childImageSharp.fluid} />
+                        <h3 className={styles.imageTitle}>Accessories</h3>
+                    </Link>
+                    <Link to="/category/venia-dresses/" className={styles.cell}>
+                        <Image fluid={data.dresses.childImageSharp.fluid} />
+                        <h3 className={styles.imageTitle}>Dresses</h3>
+                    </Link>
+                    <Link to="/category/shop-the-look/" className={styles.cell}>
+                        <Image fluid={data.look.childImageSharp.fluid} />
+                        <h3 className={styles.imageTitle}>Shop the Look</h3>
+                    </Link>
+                    <Link
+                        to="/category/venia-bottoms/"
+                        className={`${styles.cell} ${styles.cellSmall}`}
+                    >
+                        <Image fluid={data.bottoms.childImageSharp.fluid} />
+                        <h3 className={styles.imageTitle}>Bottoms</h3>
+                    </Link>
                 </div>
             </Layout>
         </div>

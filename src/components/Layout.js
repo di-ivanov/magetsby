@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import {
-    Icon,
-    Drawer,
-    Classes,
-    Position,
-    InputGroup,
-} from "@blueprintjs/core"
+import { Icon, Drawer, Classes, Position, InputGroup } from "@blueprintjs/core"
 import { IconNames } from "@blueprintjs/icons"
 import styles from "./Layout.module.css"
 import BackgroundImage from "gatsby-background-image"
@@ -112,8 +106,14 @@ export default function Layout({ children }) {
         <div>
             <div className={`${styles.navWrapper} navWrapper`}>
                 <div className={styles.navContainer}>
-                    <div className={`${styles.mobileOnly} ${styles.mobileDrawerContainer}`}>
-                        <Icon icon={IconNames.MENU} onClick={handleOpen} className={styles.mobileDrawer} />
+                    <div
+                        className={`${styles.mobileOnly} ${styles.mobileDrawerContainer}`}
+                    >
+                        <Icon
+                            icon={IconNames.MENU}
+                            onClick={handleOpen}
+                            className={styles.mobileDrawer}
+                        />
                     </div>
                     <div className={styles.navLogoContainer}>
                         <Link to="/" title="MaGetsby Store">
@@ -122,7 +122,9 @@ export default function Layout({ children }) {
                             </svg>
                         </Link>
                     </div>
-                    <div className={`${styles.desktopOnly} ${styles.navCategoriesContainer}`}>
+                    <div
+                        className={`${styles.desktopOnly} ${styles.navCategoriesContainer}`}
+                    >
                         {categories.map(category => (
                             <Link
                                 key={category.id}
@@ -133,17 +135,20 @@ export default function Layout({ children }) {
                         ))}
                     </div>
                     <div className={styles.navIconsContainer}>
-                        <Link className={`${styles.desktopOnly} ${styles.navIcon}`} to="/">
-                            <Icon icon={IconNames.SEARCH} iconSize={`1.1rem`} />
+                        <Link
+                            className={`${styles.desktopOnly} ${styles.navIcon}`}
+                            to="/"
+                        >
+                            <Icon icon={IconNames.SEARCH} />
                         </Link>
-                        <Link className={`${styles.desktopOnly} ${styles.navIcon}`} to="/">
-                            <Icon icon={IconNames.USER} iconSize={`1.1rem`} />
+                        <Link
+                            className={`${styles.desktopOnly} ${styles.navIcon}`}
+                            to="/"
+                        >
+                            <Icon icon={IconNames.USER} />
                         </Link>
                         <Link className={styles.navIcon} to="/">
-                            <Icon
-                                icon={IconNames.SHOPPING_CART}
-                                iconSize={`1.1rem`}
-                            />
+                            <Icon icon={IconNames.SHOPPING_CART} />
                         </Link>
                     </div>
                 </div>
@@ -190,7 +195,10 @@ export default function Layout({ children }) {
                             {categories.map(category => (
                                 <li
                                     key={category.id}
-                                    style={{ listStyle: `none`, margin: `0.25rem 0` }}
+                                    style={{
+                                        listStyle: `none`,
+                                        margin: `0.25rem 0`,
+                                    }}
                                 >
                                     <Link
                                         to={`/category/${category["url_key"]}/`}
@@ -202,10 +210,20 @@ export default function Layout({ children }) {
                         </ul>
                         <h3>Navigate</h3>
                         <ul style={{ padding: `0 1rem` }}>
-                            <li style={{ listStyle: `none`, margin: `0.25rem 0`  }}>
+                            <li
+                                style={{
+                                    listStyle: `none`,
+                                    margin: `0.25rem 0`,
+                                }}
+                            >
                                 <Link to="/">My Account</Link>
                             </li>
-                            <li style={{ listStyle: `none`, margin: `0.25rem 0`  }}>
+                            <li
+                                style={{
+                                    listStyle: `none`,
+                                    margin: `0.25rem 0`,
+                                }}
+                            >
                                 <Link to="/">Cart</Link>
                             </li>
                         </ul>

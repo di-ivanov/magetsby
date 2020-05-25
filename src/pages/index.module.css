@@ -9,9 +9,56 @@
 .cell {
     flex: 0 0 calc(200%/3 - 1rem/2);
     margin-bottom: 1rem;
+    position: relative;
+    text-align: center;
 }
 
 .cellSmall {
     flex: 0 0 calc(100%/3 - 1rem/2);
-    margin-bottom: 1rem;
+}
+
+.imageTitle {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    margin: auto;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px;
+    font-size: 1.8rem;
+    color: #444;
+}
+
+.imageTitle:before {
+    content: "#"
+}
+
+@media (max-width: 768px) {
+    .cell {
+        flex: 0 0 100%;
+    }
+    
+    .cellSmall {
+        flex: 0 0 calc(100%/2 - 1rem/2);
+    }
+
+    .cell:nth-child(1) {
+        order: 2;
+    }
+
+    .cell:nth-child(2) {
+        order: 1;
+    }
+
+    .cell:nth-child(3) {
+        order: 4;
+    }
+
+    .cell:nth-child(4) {
+        order: 3;
+    }
+
+    .imageTitle {
+        font-size: 1.4rem;
+    }
 }
