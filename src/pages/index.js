@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/Layout"
@@ -6,41 +7,31 @@ import styles from "./index.module.css"
 
 export const query = graphql`
     query {
-        magentoProducts {
-            categoryList {
-                children {
-                    id
-                    name
-                    url_key
-                }
-            }
-        }
-
         accesories: file(relativePath: { eq: "accesories.jpg" }) {
             childImageSharp {
-                fluid(maxWidth: 824) {
-                    ...GatsbyImageSharpFluid
+                fluid(maxWidth: 408) {
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
         dresses: file(relativePath: { eq: "dresses.jpg" }) {
             childImageSharp {
                 fluid(maxWidth: 824) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
         look: file(relativePath: { eq: "look.jpg" }) {
             childImageSharp {
                 fluid(maxWidth: 824) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
         bottoms: file(relativePath: { eq: "bottoms.jpg" }) {
             childImageSharp {
                 fluid(maxWidth: 408) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
@@ -48,10 +39,12 @@ export const query = graphql`
 `
 
 const Index = ({ data }) => {
-    const categories = data.magentoProducts.categoryList[0].children
-    console.log(data)
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>MaGetsby | It's all about #speed</title>
+            </Helmet>
             <Layout>
                 <div className={styles.container}>
                     <Link

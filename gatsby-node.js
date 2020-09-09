@@ -60,7 +60,7 @@ exports.createPages = async ({ actions, graphql }) => {
     data.magentoProducts.products.items.forEach(({ sku, url_key }) => {
         actions.createPage({
             path: `/product/${url_key}/`,
-            component: path.resolve(`./src/components/Products.js`),
+            component: path.resolve(`./src/templates/product-template.js`),
             context: {
                 sku: sku,
             },
@@ -78,7 +78,7 @@ exports.createPages = async ({ actions, graphql }) => {
             urlPath += `${url_key}/`
             actions.createPage({
                 path: urlPath,
-                component: path.resolve(`./src/components/Categories.js`),
+                component: path.resolve(`./src/templates/category-template.js`),
                 context: {
                     id: id.toString(),
                 },
